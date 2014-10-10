@@ -20,9 +20,9 @@
             for (var i = 0; i < arrayToCycle.length; i++) {
                 var rgb = jqueryObj.css(cssProperty);
                 //console.log(rgb2hex(rgb) + " == " + arrayToCycle[i]);
-                if (rgb2hex(rgb) == arrayToCycle[i]) {
+                if (rgb2hex(rgb) === arrayToCycle[i]) {
 
-                    if (i == arrayToCycle.length - 1) {
+                    if (i === arrayToCycle.length - 1) {
                         //console.log('Setting css color to', arrayToCycle[0]);
                         jqueryObj.css(cssProperty, arrayToCycle[0]);
                         break;
@@ -86,11 +86,11 @@
             height: '100%'
         }, options);
 
-        if (settings.controls == 'true')
+        if (settings.controls === 'true')
             videoTag = videoTag + " controls";
-        if (settings.loop == 'true')
+        if (settings.loop === 'true')
             videoTag = videoTag + " loop";
-        if (settings.autoplay == 'true')
+        if (settings.autoplay === 'true')
             videoTag = videoTag + " autoplay";
 
         // Make the music player
