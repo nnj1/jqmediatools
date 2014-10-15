@@ -1,5 +1,5 @@
 (function($) {
-    
+
     /* Function to convert RGB to HEX */
     function rgb2hex(rgb) {
         rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
@@ -67,7 +67,7 @@
 
         // Make the music player
         this.html(audioTag + " width='" + settings.width + "' height='" + settings.height + "' > <source src=" + musicURL + " >Your browser does not support the audio element.</audio>");
-        
+
         return this;
 
     };
@@ -95,9 +95,9 @@
 
         // Make the music player
         this.html(videoTag + " width='" + settings.width + "' height='" + settings.height + "' > <source src=" + videoURL + " >Your browser does not support the video element.</video>");
-        
+
         return this;
-    
+
     };
 
     // Set up the queue
@@ -105,48 +105,48 @@
     var currentTrack = 0;
     var player = new Audio();
 
-    player.addEventListener('ended', function(){
-    	$.nextTrack();
-	});
+    player.addEventListener('ended', function() {
+        $.nextTrack();
+    });
 
     /* Functions that handle background music */
     $.extend({
-    	addToQueue: function(link){
-    		queue.push(link);
-    	},
-    	getQueue: function(){
-    		return queue;
-    	},
-    	setQueue: function(newq){
-    		queue = newq;
-    	},
-    	startMusic: function(){
-    		player.setAttribute("src", queue[currentTrack]);
-			player.load();
-    		player.play();
-    	},
-    	pauseMusic: function(){
-    		player.pause();
-    	},
-    	resumeMusic: function(){
-    		player.play();
-    	},
-    	stopMusic: function(){
-    		player.pause();
-			player.currentTime = 0;
-    	},
-    	nextTrack: function(){
-    		if(currentTrack !== queue.length - 1)
-    			currentTrack++;
-    		else
-    			$.startMusic();
-    	},
-    	previousTrack: function(){
-    		if(currentTrack !== 0)
-    			currentTrack--;
-    		else
-    			$.startMusic();
-    	}
+        addToQueue: function(link) {
+            queue.push(link);
+        },
+        getQueue: function() {
+            return queue;
+        },
+        setQueue: function(newq) {
+            queue = newq;
+        },
+        startMusic: function() {
+            player.setAttribute("src", queue[currentTrack]);
+            player.load();
+            player.play();
+        },
+        pauseMusic: function() {
+            player.pause();
+        },
+        resumeMusic: function() {
+            player.play();
+        },
+        stopMusic: function() {
+            player.pause();
+            player.currentTime = 0;
+        },
+        nextTrack: function() {
+            if (currentTrack !== queue.length - 1)
+                currentTrack++;
+            else
+                $.startMusic();
+        },
+        previousTrack: function() {
+            if (currentTrack !== 0)
+                currentTrack--;
+            else
+                $.startMusic();
+        }
     });
 
     /**/
