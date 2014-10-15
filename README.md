@@ -1,4 +1,4 @@
-[jqtools]() - A jQuery Plugin
+[jqmediatools]() - A jQuery Plugin for Multimedia
 =======
 [![Build Status](https://drone.io/github.com/nnj1/jqtools/status.png)](https://drone.io/github.com/nnj1/jqtools/latest)
 
@@ -7,7 +7,7 @@ If you're working on the client side, just include the script ```jqtools.jquery.
 
 ```html
 <script src="jquery.js"></script>
-<script src="jqtools.jquery.js"></script>
+<script src="jqmediatools.jquery.js"></script>
 <script src="your_code.js"></script>
 ```
 ##Documentation
