@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>jqmediatools</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+            h1{
+                font-size: 62px;
+                color: black;
+            }
+            .ace-editor{
+                font-size: 16px;
+            }
+            .ace_scrollbar {
+                display: none !important;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <style type="text/css" media="screen">
+            #editor { 
+                height: 290px;
+                top: 100px;
+                width: 600px;
+                bottom: 10px;
+                margin-left: 390px;
+            }
+            .row {
+                margin-left: -45px;
+            }
+        </style>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+        <div id = "main"class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit"style="padding: 100px;">
+                <div class="container span6">
+                <div id="editor">
+// JSON encoded options object for video/audio
+var options = {controls:'true', autoplay:'true', loop:'false'};
+
+// Create an &lt;audio&gt; out of a &lt;div&gt;
+$('thing').musicify('url', options);
+
+// Create an &lt;video&gt; out of a &lt;div&gt;
+$('thing2').vidify('url', options);
+
+// Add songs to queue
+$.addToQueue('song1.mp3');
+$.addToQueue('song2.mp3');
+
+// Start the music on a simple button click
+$('#playButton').click(function(){
+  $.startMusic();
+});
+
+// Pause the music on a simple button click
+$('#pauseButton').click(function(){
+  $.pauseMusic();
+});
+
+// Stop the music on a simple button click
+$('#stopButton').click(function(){
+  $.stopMusic();
+});
+
+// Get the entire queue
+var playlist = $.getQueue();
+
+// Set the entire queue (rather than one song at a time)
+var songs = ['track1', 'track2', 'track3'];
+$.setQueue(songs);
+
+				</div>
+                </div>
+                <div class="">
+                    <h1>jqmediatools</h1>
+                    
+                    <p style="font-size:30px;">a jQuery plugin for multimedia</p>
+                    <p><a href = "https://raw.githubusercontent.com/nnj1/jqmediatools/master/bin/jquery.jqtools.min.js" class="btn btn-primary btn-large">Download &raquo;</a></p>
+                </div>
+            </div>
+
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="span4">
+                    <h2>Take Control of Videos</h2>
+                    <p>Additional methods to the jQuery object allow for easy transformation of any div into a video object.</p>
+                </div>
+                <div class="span4">
+                    <h2>Take Control of Music</h2>
+                    <p>Additional methods to the jQuery object allow for easy transformation of any div into an audio object.</p>
+                </div>
+                <div class="span4">
+                    <h2>Background Music</h2>
+                    <p>Control the music which plays in the background of your site. Add songs to a playlist and take control of playback within jQuery.</p>
+                </div>
+            </div>
+
+           
+            <footer>
+                <p>&copy; Newlyn Joseph 2014</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script> 
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/github");
+            editor.setFontSize("15px") 
+            editor.getSession().setMode("ace/mode/javascript");
+        </script>
+    </body>
+</html>
